@@ -1,1 +1,1 @@
-# pallete-web
+# Pallete Web
