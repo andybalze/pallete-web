@@ -1,0 +1,46 @@
+* {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:700;
+    font-size:20px;
+    margin:0;
+    padding:0;
+}
+#connMessage, #connStatus {
+    font-size: 12px;
+}
+#output {
+    margin-top:0;
+}
+main {
+    padding: .25em;
+    margin: .25em;
+}
+header {
+    margin: .25em !important;
+}
+#rfuPage div.rfuSection {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+#rfuPage .btn-key {
+    padding: 10px 0px 10px 0px;
+}
+#rfuPage .btn-group-lg>.btn, .btn-lg {
+    font-size: 25px;
+}
+#rfuPage .btn-dark {
+    color: #fff;
+    background-color: #632660;
+    border-color: #632660;
+}
+/* Dark Mode 
+.panel {
+    background-color: transparent;
+}
+body, div.navbar-header, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    background-color: #0a0323;
+}
+.panel-default, .navbar-default, .navbar-default .navbar-toggle {
+    border-color: #0b2252;
+}
+  End Dark Mode */

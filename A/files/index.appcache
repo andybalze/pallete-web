@@ -1,0 +1,19 @@
+CACHE MANIFEST
+ 
+# Offline cache v1
+# html files
+index.html
+ 
+# css files
+files/style.min.css
+files/jquery-ui.min.css
+ 
+# js files
+files/jquery.min.js
+files/remote.js
+
+# images
+favicon.ico
+files/palette_icon.png
+NETWORK:
+*

@@ -1,0 +1,33 @@
+CACHE MANIFEST
+ 
+# Offline cache v1
+# html files
+#index.html
+#apps.html
+#cues.html
+#help.html
+#login.html
+#more.html
+#ppt.html
+#rfu.html
+#setup.html
+#system.html
+
+# css files
+#files/style.css
+#files/jquery-ui.min.css
+#files/bootstrap-theme.min.css
+#filesbootstrap.min.css
+ 
+# js files
+#files/jquery.ui.touch-punch.min.js
+#files/jquery.min.js
+#files/script.js
+#files/bootstrap.min.js
+
+# images
+#files/icons/favicon.ico
+#files/icons/palette_icon.png
+
+NETWORK:
+*

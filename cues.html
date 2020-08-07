@@ -1,0 +1,29 @@
+<div class="cuesPage text-center" ttl="Cues">
+    <button type="button" class="btn btn-default btn-block btn-lg" cmd="cueListRelease">
+        <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+        Cue List Release
+    </button>
+    <button type="button" class="btn btn-default btn-block btn-lg" cmd="nextCue">
+        Next Cue
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="btn btn-default btn-block btn-lg" cmd="cueHaltBack">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        Halt/Back
+    </button>
+    <br />
+    <div class="form-group">
+        <label for="cueNumber">Search Cue Number</label>
+        <input id="cueNumber" type="number" pattern="/^\d*\.?\d*$/" class="form-control" style="height: 10rem;font-size: 8rem;text-align: center;width:3em;margin:auto;">
+        <button type="button" class="btn btn-default col-xs-6 " cmd="cueGotoExecute">
+            <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+            Goto &amp; Exec Follow
+        </button>
+        <button type="button" class="btn btn-default col-xs-6 " cmd="CueGotoHalt">
+            <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+            Goto &amp; Halt Follow
+        </button>
+        <button class="col-xs-12 btn btn-default btn-lg btn-key btn-warning" btn="rec">Record</button>
+    </div>
+    <div style="line-height: 0;">&nbsp;</div><!-- This makes the border around the page look nice -->
+</div>

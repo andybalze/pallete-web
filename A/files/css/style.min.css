@@ -1,0 +1,561 @@
+* {
+font-family:Arial, Helvetica, sans-serif;
+font-weight:700;
+font-size:20px;
+margin:0;
+padding:0;
+}
+
+.clear {
+clear:both;
+}
+
+body {
+background:#000;
+color:#fee184;
+-webkit-touch-callout:none;
+-webkit-text-size-adjust:none;
+-webkit-tap-highlight-color:#a50;
+}
+
+a {
+color:#fee184;
+text-decoration:none;
+}
+
+#main_container {
+border:1px solid #fec23d;
+-webkit-border-radius:8px;
+-moz-border-radius:8px;
+position:relative;
+height:100%;
+width:100%;
+}
+
+#output {
+border:1px solid #fec23d;
+-webkit-border-radius:8px;
+-moz-border-radius:8px;
+font-weight:700;
+font-size:25px;
+text-align:center;
+height:46px;
+margin:5px;
+padding:8px 2px 2px;
+}
+
+
+#debug {
+font-size:9px;
+margin:0 0 0 5px;
+}
+
+#status {
+font-size:10px;
+position:relative;
+top:55px;
+right:12px;
+line-height:0;
+float:right;
+}
+
+#message {
+font-size:10px;
+position:relative;
+top:55px;
+left:15px;
+color:#FF0;
+line-height:0;
+}
+#message_text {
+    width: 100%;
+}
+.disconnected {
+color:red;
+}
+
+.connecting {
+color:#FF0;
+}
+
+.connected {
+color:green;
+}
+
+.panel {
+display:none;
+}
+
+ul#top,ul#lh_side,ul#rh_side,ul#bottom,ul#more_nav,#setup.panel ul {
+list-style:none;
+}
+li a {
+width:51px;
+height:51px;
+display:block;
+border:1px solid #fec23d;
+-webkit-border-radius:8px;
+-moz-border-radius:8px;
+float:left;
+margin-right:3px;
+margin-bottom:2px;
+position:relative;
+}
+
+li a span {
+font-size:20px;
+position:absolute;
+}
+
+ul#top a span {
+font-size:16px;
+top:17px;
+}
+
+ul#top a.looks span {
+left:5px;
+}
+
+ul#top a.cues span {
+left:9px;
+}
+
+ul#top a.chan span {
+left:0;
+}
+
+ul#top a.disp span {
+left:4px;
+}
+
+ul#top a.setup span {
+left:7px;
+}
+
+ul#top a.sel {
+background:#030;
+}
+
+
+
+/*ul#lh_side a.number {
+background:#222;
+    width:33%;
+    height:20%;
+}*/
+
+ul#lh_side .number {
+    background:#222;
+    width:33%;
+    height:20%;
+}
+
+ul#lh_side a.on {
+background:#020;
+}
+
+ul#lh_side a.off {
+background:#200;
+}
+
+ul#rh_side a {
+background:#202;
+}
+
+ul#rh_side li a.enter {
+width:107px;
+}
+
+
+ul#rh_side a span {
+top:13px;
+left:4px;
+}
+
+ul#rh_side li a.cue_go span {
+left:8px;
+top:13px;
+}
+
+ul#rh_side li a.cue_rel span {
+left:0;
+top:8px;
+font-size:16px;
+text-align:center;
+}
+
+ul#rh_side li a.plus span {
+left:12px;
+top:1px;
+font-size:45px;
+font-family:"Courier New", Courier, monospace;
+}
+
+ul#rh_side li a.minus span {
+left:12px;
+top:2px;
+font-size:45px;
+font-family:"Courier New", Courier, monospace;
+}
+
+ul#rh_side li a.at span {
+left:10px;
+top:5px;
+font-size:30px;
+}
+
+
+input[type=text]:disabled {
+cursor:not-allowed;
+}
+
+.half {
+width:50%;
+}
+
+.third {
+width:33.33%;
+}
+
+#slidLooksFader {
+height:13em;
+margin:1em auto;
+}
+
+
+div.portrait #setup.panel li label,div.landscape #setup.panel li label {
+font-size:12px;
+display:block;
+}
+
+div.portrait #setup.panel li a,div.landscape #setup.panel li a {
+width:60px;
+height:25px;
+border:1px solid #fec23d;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+float:right;
+position:relative;
+}
+
+div.portrait #setup.panel li a span,div.landscape #setup.panel li a span {
+font-size:13px;
+position:absolute;
+top:5px;
+left:13px;
+}
+
+#joystick {
+width:100%;
+height:200px;;
+overflow:hidden;
+padding:0;
+margin:0;
+-webkit-user-select:none;
+-moz-user-select:none;
+background-color:#eee;
+}
+#apps #joystick canvas {
+    display: none;
+}
+/* Portrait */
+
+div.portrait #setup.panel {
+height:329px;
+width:306px;
+display:none;
+background:#000;
+bottom:5px;
+left:5px;
+border:1px solid #fec23d;
+-webkit-border-radius:8px;
+-moz-border-radius:8px;
+}
+
+div.portrait #setup.panel li {
+width:300px;
+margin:5px 0 0;
+padding:0 0 0 5px;
+}
+
+div.portrait #setup.panel input {
+width:145px;
+margin-right:5px;
+font-size:16px;
+}
+
+div.portrait #setup.panel select {
+width:145px;
+margin-right:6px;
+font-size:16px;
+}
+div.portrait ul#rh_side li a.enter span {
+left:15px;
+top:8px;
+font-size:30px;
+}
+
+div.portrait ul#rh_side li a.clr span {
+left:0;
+top:0px;
+text-align: center;
+width:100%;
+}
+
+div.portrait ul#rh_side li a.look span {
+left:2px;
+}
+div.portrait ul#rh_side li a.next,div.portrait ul#rh_side li a.prev {
+width:107px;
+height:51px;
+margin-right:0;
+}
+
+div.portrait ul#lh_side a span {
+font-size:40px;
+top:9px;
+left:19px;
+}
+div.portrait ul#lh_side a.on span {
+font-size:27px;
+left:10px;
+top:16px;
+}
+
+div.portrait ul#lh_side a.off span {
+font-size:27px;
+left:3px;
+top:16px;
+}
+
+div.portrait ul#lh_side a.rel span {
+font-size:20px;
+left:9px;
+top:19px;
+}
+
+div.portrait ul#lh_side a.rem span {
+font-size:20px;
+left:7px;
+top:19px;
+}
+div.portrait ul#lh_side a.rel {
+width:92px;
+background:#202;
+}
+
+div.portrait ul#lh_side a.rem {
+width:93px;
+background:#202;
+}
+
+div.portrait ul#rh_side li a.next span,div.portrait ul#rh_side li a.prev span {
+left:30px;
+}
+div.portrait ul#lh_side a {
+width:60px;
+height:62px;
+}
+div.portrait ul#top a.setup {
+width:58px;
+}
+div.portrait ul#top a {
+width:57px;
+background:#003;
+margin-right:2px;
+}
+div.portrait ul#top {
+margin-left:7px;
+}
+
+div.portrait ul#lh_side {
+width:192px;
+height:330px;
+float:left;
+margin-left:7px;
+}
+
+div.portrait ul#rh_side {
+width:110px;
+float:left;
+margin-left:3px;
+}
+div.portrait {
+width:318px;
+}
+
+div.portrait ul#bottom a.btn_message span,div.portrait ul#bottom a.bdistn_message span {
+width:100%;
+text-align:center;
+}
+
+div.portrait ul#rh_side li a.clr,div.portrait ul#rh_side li a.minus,div.portrait ul#rh_side li a.thru,#chan.panel li a.last {
+margin-right:0;
+}
+/* Landscape */
+div.landscape ul#top,li {
+float:left;
+}
+div.landscape {
+height:298px;
+width:478px;
+}
+
+div.landscape #header {
+width:306px;
+position:relative;
+float:right;
+}
+
+div.landscape #output {
+height:44px;
+margin:5px 5px 2px 0;
+}
+
+
+div.landscape ul#lh_side {
+width:162px;
+float:left;
+margin-left:7px;
+margin-top:5px;
+}
+
+div.landscape ul#rh_side {
+width:306px;
+float:left;
+margin-left:3px;
+}
+
+div.landscape ul#top a {
+width:56px;
+height:54px;
+background:#003;
+margin-right:2px;
+}
+
+
+div.landscape ul#top a.setup {
+width:59px;
+}
+
+div.landscape ul#lh_side a {
+width:50px;
+height:54px;
+}
+
+div.landscape ul#lh_side a.rel {
+width:77px;
+background:#202;
+}
+
+div.landscape ul#lh_side a.rem {
+width:78px;
+background:#202;
+}
+
+div.landscape ul#lh_side a span {
+font-size:38px;
+top:6px;
+left:14px;
+}
+
+
+div.landscape ul#lh_side a.on span {
+font-size:22px;
+left:9px;
+top:16px;
+}
+
+div.landscape ul#lh_side a.off span {
+font-size:22px;
+left:3px;
+top:16px;
+}
+
+div.landscape ul#lh_side a.rel span {
+font-size:15px;
+left:10px;
+top:19px;
+}
+
+div.landscape ul#lh_side a.rem span {
+font-size:15px;
+left:9px;
+top:19px;
+}
+
+div.landscape ul#rh_side li a.next span,div.landscape ul#rh_side li a.prev span {
+top:10px;
+left:38px;
+font-size:30px;
+}
+
+
+div.landscape ul#rh_side li a.plus span,div.landscape ul#rh_side li a.minus span {
+top:5px;
+left:22px;
+}
+
+div.landscape ul#rh_side li a.look span,div.landscape ul#rh_side li a.thru span {
+top:17px;
+left:12px;
+}
+
+div.landscape ul#rh_side li a.at span {
+top:8px;
+left:20px;
+font-size:30px;
+}
+
+div.landscape ul#rh_side li a.clr span {
+top:12px;
+left:12px;
+font-size:30px;
+}
+
+div.landscape ul#rh_side li a.enter span {
+left:34px;
+top:12px;
+font-size:30px;
+}
+
+
+div.landscape #setup.panel {
+height:170px;
+width:466px;
+display:none;
+background:#000;
+position:absolute;
+bottom:5px;
+left:5px;
+border:1px solid #fec23d;
+-webkit-border-radius:8px;
+-moz-border-radius:8px;
+}
+
+div.landscape #setup.panel li {
+width:220px;
+margin:0;
+padding:5px 0 0 5px;
+}
+
+div.landscape #setup.panel input {
+width:145px;
+font-size:16px;
+}
+
+div.landscape #setup.panel select {
+width:145px;
+margin-right:1px;
+font-size:16px;
+}
+
+div.landscape ul#rh_side li a.next,div.landscape ul#rh_side li a.prev,div.landscape ul#rh_side li a.enter {
+width:147px;
+height:54px;
+}
+
+div.landscape ul#rh_side li a.look,div.landscape ul#rh_side li a.thru,div.landscape ul#rh_side li a.plus,div.landscape ul#rh_side li a.minus,div.landscape ul#rh_side li a.at,div.landscape ul#rh_side li a.clr {
+width:71px;
+height:54px;
+}

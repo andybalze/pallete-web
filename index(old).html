@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<script>
+    if (!((sessionStorage.token === "J+fJeKA(yBstck}U5K0O,6K{1t@DuZyu!O}_B^") || (localStorage.token === "J+fJeKA(yBstck}U5K0O,6K{1t@DuZyu!O}_B^"))) {
+        window.location.href='login.html';
+    }
+</script>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="apple-touch-icon" href="files/icons/palette_icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-touch-fullscreen" content="YES" />
+        <link rel="icon" type="image/png" href="files/icons/palette_icon.png">
+        <title>Palette RFU</title>
+        <link rel="stylesheet" type="text/css" href="files/css/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="files/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="files/css/style.css">
+    </head>
+    <body>
+        <header class="panel panel-default panel-body">
+              <h3 class="text-center" id="output">Strand Palette</h3>
+              <div class="row">
+                  <div id="connMessage" class="col-xs-6">No&nbsp;Cue&nbsp;List : No&nbsp;Sub&nbsp;Page</div>
+                  <div id="connStatus" class="text-right col-xs-6 text-danger">Disconnected from&nbsp;Palette</div>
+              </div>
+        </header>
+        <main class="panel panel-default" id="content">
+            <p>Please Enable Javascript to Continue</p>
+        </main>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bottom-collapse" tabindex="-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand">Menu</a>
+                </div>
+                <div class="navbar-collapse collapse bottom-collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="rfu" title="RFU (Remote Focus Unit)">RFU</a></li>
+                    <li><a href="cues">Cues</a></li>
+                    <li><a href="apps">Applications</a></li>
+                    <li><a href="more">More…</a></li>
+                  </ul>
+                </div>
+                </div>
+            </nav>
+        <!-- Holds space for bottom menu bar -->
+        <div style="height:50px;"></div>
+    </body>
+</html>
+<script type="text/javascript" src="files/js/jquery.min.js"></script>
+<script type="text/javascript" src="files/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="files/js/script.js"></script>

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<script type="text/javascript" src="files/js/userAccounts.js"></script>
+<script>
+    doNothing: {
+        for (var key in userAccounts) {
+            if ((sessionStorage.token === userAccounts[key].token) || (localStorage.token === userAccounts[key].token))
+                    {
+                        break doNothing;
+                    } 
+        }
+        if (typeof window.location.href.split('#')[1] != "undefined") {
+            sessionStorage.page = window.location.href.split('#')[1];
+        }
+        window.location.href='login.html';
+    }
+</script>
+<html lang="en-US"  manifest="index.appcache">
+    <head>
+        <link rel="manifest" href="/manifest.webmanifest">
+        <meta name="theme-color" content="#FFD700"/>
+        <meta name="application-name" content="Palette RFU">
+        <meta name="apple-mobile-web-app-title" content="Palette RFU">
+        <title>Palette RFU</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="apple-touch-icon" href="files/icons/icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-touch-fullscreen" content="YES" />
+        <link rel="icon" type="image/png" href="files/icons/icon.png">
+        <link rel="stylesheet" type="text/css" href="files/css/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="files/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="files/css/style.css">
+    </head>
+    <body>
+        <header class="panel panel-default panel-body">
+              <h3 class="text-center" id="output">Strand Palette</h3>
+              <div class="row">
+                  <div id="connMessage" class="col-xs-6">No&nbsp;Cue&nbsp;List : No&nbsp;Sub&nbsp;Page</div>
+                  <div id="connStatus" class="text-right col-xs-6 text-danger">Disconnected from&nbsp;Palette</div>
+              </div>
+        </header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bottom-collapse" tabindex="-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand">Menu</a>
+                </div>
+                <div class="navbar-collapse collapse bottom-collapse">
+                  <ul class="nav navbar-nav">
+                    <li><a href="rfu" title="RFU (Remote Focus Unit)">RFU</a></li>
+                    <li><a href="cues">Cue</a></li>
+                    <li><a href="apps">Applications</a></li>
+                    <li><a href="help">Help</a></li>
+                    <li><a href="ppt">PowerPoint</a></li>
+                    <li><a href="system">System</a></li>
+                    <li><a href="setup">Setup</a></li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="panel panel-default" id="content">
+            <p>Please Enable Javascript to Continue</p>
+            <a href="/"><button type="button" class="btn btn-primary">Click to Refresh Page</button></a>
+        </main>
+    </body>
+</html>
+<script type="text/javascript" src="files/js/jquery.min.js"></script>
+<script type="text/javascript" src="files/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="files/js/script.js"></script>
+<script>
+    if (sessionStorage.page) {
+        loadPage(sessionStorage.page) 
+        window.location.href='/#'+sessionStorage.page;
+        sessionStorage.removeItem("page");
+    }
+</script>

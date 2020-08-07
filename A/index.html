@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html manifest="files/index.appcache">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="apple-touch-icon" href="files/icons/palette_icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <link rel="icon" type="image/png" href="files/icons/palette_icon.png">
+    <title>Palette</title>
+    <link rel="stylesheet" type="text/css" href="files/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="files/css/jquery-ui.min.css">
+</head>
+<body>
+    <div id="main_container" class="portrait">
+        <div id="header">
+            <div id="status" class="connecting">Looking for Palette...</div>
+            <div id="message">&nbsp;</div>
+            <div id="output">&nbsp;</div>
+            <ul id="top">
+                <li><a href="#" class="nav chan" ref="chan"><span>Remote</span></a></li>
+                <li><a href="#" class="nav levels" ref="levels"><span>Levels</span></a></li>
+                <li><a href="#" class="nav sys" ref="sys"><span>System</span></a></li>
+                <li><a href="#" class="nav more" ref="more"><span>More...</span></a></li>
+                <li><a href="#" class="nav setup last" ref="setup"><span>Setup</span></a></li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div id="chan" class="panel">
+            <ul id="lh_side">
+                <li><a href="#" class="rel"><span>Release</span></a></li>
+                <li><a href="#" class="rem last"><span>RemDim</span></a></li>
+                <li class="number" ref="7"><a href="#"><span>7</span></a></li>
+                <li class="number" ref="8"><a href="#"><span>8</span></a></li>
+                <li class="number" ref="9"><a href="#" class="last"><span>9</span></a></li>
+                <li class="number" ref="4"><a href="#"><span>4</span></a></li>
+                <li class="number" ref="5"><a href="#"><span>5</span></a></li>
+                <li class="number" ref="6"><a href="#" class="last"><span>6</span></a></li>
+                <li class="number" ref="1"><a href="#"><span>1</span></a></li>
+                <li class="number" ref="2"><a href="#"><span>2</span></a></li>
+                <li class="number" ref="3"><a href="#" class="last"><span>3</span></a></li>
+                <li><a href="#" class="on"><span>ON</span></a></li>
+                <li><a href="#" class="number" ref="0"><span>0</span></a></li>
+                <li><a href="#" class="off last"><span>OFF</span></a></li>
+            </ul>
+            <ul id="rh_side">
+                <li><a href="#" class="at"><span>@</span></a></li>
+                <li><a href="#" class="clr"><span>&larr;<br />Clr</span></a></li>
+                <li><a href="#" class="prev"><span>Prev</span></a></li>
+                <li><a href="#" class="next"><span>Next</span></a></li>
+                <li><a href="#" class="look"><span>Look</span></a></li>
+                <li><a href="#" class="thru"><span>Thru</span></a></li>
+                <li><a href="#" class="plus"><span>+</span></a></li>
+                <li><a href="#" class="minus"><span>-</span></a></li>
+                <li><a href="#" class="enter last"><span>Enter</span></a></li>
+            </ul>
+            <ul id="bottom" style="margin-left: 7px;">
+                <li>
+                    <input style="width: 304px;" id="message_text"> </li>
+                <li><a class="btn_msg" style="width: 304px;" href="#"><span>Send Message</span></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div id="levels" class="panel">
+            <div id="slidLooksFader"></div>
+            <div id="toggWorks">Toggle Work Lights</div>
+        </div>
+        <div id="sys" class="panel">
+            <ul>
+                <li><a style="width:93px;" href="#" class="shtdwn" ref="shtdwn"><span>Shutdown</span></a></li>
+                <li><a style="width:93px;" href="#" class="shtdwn" ref="reboot"><span>Restart</span></a></li>
+                <input type="radio" name="restart_save" value="true" checked="checked"><span>Yes</span>
+                <input type="radio" name="restart_save" value="false"><span>No</span>
+            </ul>
+            <input style="width: 304px;" class="cmd_txt">
+            <a class="btn_trans_cmd" style="width: 304px;" href="#"><span>Transmit Command</span></a>
+        </div>
+        <div id="apps" class="panel">
+            <div id="joystick"></div>
+            <span id="result"></span>
+        </div>
+        <div id="cues" class="panel">
+            <button class="go">Next Cue</button>
+            <button class="halt">Halt/Back</button>
+        </div>
+        <div id="more" class="panel">
+            <ul id="more_nav">
+                <li><a href="#" class="nav sys" ref="sys"><span>System</span></a></li>
+                <li><a href="#" class="nav setup" ref="setup"><span>Setup</span></a></li>
+                <li><a href="#" class="nav apps" ref="apps"><span>Application</span></a></li>
+                <li><a href="#" class="nav help" ref="help"><span>Help</span></a></li>
+                <li><a href="#" class="nav cues" ref="cues"><span>Cues</span></a></li>
+            </ul>
+        </div>
+        <div id="help" class="panel">
+            <h3>Help</h3>
+            <p>One is unable to change the ip address</p>
+        </div>
+        <div id="setup" class="panel">
+            <ul>
+                <li>Setup</li>
+                <li>
+                    <label>IP Address</label>
+                    <input name="txt_ipaddress" id="txt_ipaddress" type="text" class="" value="" disabled="disabled" />
+                    <!--<a href="#" id="save_ip_address" class="button"><span>Save</span></a>--></li>
+                <li>
+                    <label>Looks Page</label>
+                    <input name="txt_looks_page" id="txt_looks_page" type="text" class="" /> <a href="#" id="save_looks_page" class="button"><span>Save</span></a></li>
+                <li>
+                    <label>Cue Stack</label>
+                    <input name="txt_cue_stack" id="txt_cue_stack" type="text" class="" /> <a href="#" id="save_cue_stack" class="button"><span>Save</span></a></li>
+                <li>
+                    <label>Entry Mode</label>
+                    <select name="sel_entry_mode" id="sel_entry_mode">
+                        <option value="s">Single Entry</option>
+                        <option value="d">Double Entry</option>
+                    </select> <a href="#" id="save_entry_mode" class="button"><span>Save</span></a></li>
+                <li>
+                    <label>ON Level</label>
+                    <input name="txt_on_level" id="txt_on_level" type="number" class="" min="1" max="100" /> <a href="#" id="save_on_level" class="button"><span>Save</span></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="files/js/jquery.min.js"></script>
+<script type="text/javascript" src="files/js/virtualjoystick.js"></script>
+<script type="text/javascript" src="files/js/remote.js"></script>
+</html>

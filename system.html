@@ -1,0 +1,53 @@
+<div id="systemPage" ttl="System" class="text-center">
+    <button type="button" class="btn btn-default col-sm-4 col-xs-12" cmd="shutdown">
+        Shutdown
+        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+    </button>
+    <br />
+    <br />
+    <button type="button" class="btn btn-default col-sm-4 col-xs-12" cmd="restart">
+        Restart
+        <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+    </button>
+    <br />
+    <br />
+    <button type="button" class="btn btn-default col-sm-4 col-xs-12" cmd="tskmgr">
+        Task Manager
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+    </button>
+    <br />
+    <br />
+    <div class="input-group">
+        <input type="text" class="form-control" id="sysCmd">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button" cmd="transmitCommand">
+                Transmit Command
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+            </button>
+        </span>
+    </div>
+    <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content panel-danger">
+          <div class="modal-header panel-heading">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">
+                <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                Danger!!
+                <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+              </h4>
+          </div>
+          <div class="modal-body bg-danger">
+            Executing this command could cause damage to the console.
+              <br />
+              <br />
+              Only continue if you know for sure what you are doing.
+          </div>
+          <div class="modal-footer panel-heading">
+            <button type="button" class="btn btn-success" data-dismiss="modal" id="sysCmdCancel">Back to Safety</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="sysCmdConfirm">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+<div id="setupPage" ttl="Setup">
+    <label for="ipAddress">IP Address:</label>
+    <div class="input-group">
+        <div class="input-group-addon">http://</div>
+        <input type="text" class="form-control" id="ipAddress" disabled="disabled">
+        <div class="input-group-addon">/</div>
+        <span class="input-group-btn">
+            <button class="btn btn-success" type="button" disabled="disabled" tabindex="-1">Save</button>
+        </span>
+    </div>
+
+    <label for="looksPage">Looks Page:</label>
+    <div class="input-group">
+        <input type="text" class="form-control" id="looksPage" list="looksPages">
+        <datalist id="looksPages">
+            <option value="Faders for Dummies">
+            <option value="Stage">
+            <option value="Trees">
+            <option value="Pit">
+            <option value="Specific To Show">
+        </datalist>
+        <span class="input-group-btn">
+            <button class="btn btn-success" type="button" tabindex="-1">Save</button>
+        </span>
+    </div>
+
+    <label for="cueStack">Cue List:</label>
+    <div class="input-group">
+        <input type="text" class="form-control" id="cueStack">
+        <span class="input-group-btn">
+            <button class="btn btn-success" type="button" tabindex="-1">Save</button>
+        </span>
+    </div>
+
+    <label for="entryMode">Entry Mode:</label>
+    <div class="input-group">
+        <select class="form-control" id="entryMode">
+            <option value="s">Single Entry</option>
+            <option value="d">Double Entry</option>
+        </select>
+        <span class="input-group-btn">
+            <button class="btn btn-success" type="button" tabindex="-1">Save</button>
+        </span>
+    </div>
+
+    <label for="onLevel">On Level:</label>
+    <div class="input-group">
+        <input type="number" pattern="[0-9]*" class="form-control" id="onLevel" min="1" max="100" >
+        <span class="input-group-btn">
+            <button class="btn btn-success" type="button" tabindex="-1">Save</button>
+        </span>
+    </div>
+    
+    <label for="cueStack">PowerPoint Machine ID:</label>
+    <div class="input-group">
+        <input type="number"  pattern="[0-9]*"class="form-control" id="pptMachineId" min="1" max="9">
+        <span class="input-group-btn">
+            <button class="btn btn-success" type="button" tabindex="-1">Save</button>
+        </span>
+    </div>
+    <br />
+    <label for="saveState">Save State On Restart?</label>
+    <div class="btn-group pull-right" data-toggle="buttons">
+        <label class="btn btn-info">
+            <input type="radio" name="saveRestart" value="yes" autocomplete="off"> Yes
+        </label>
+        <label class="btn btn-info">
+            <input type="radio" name="saveRestart" value="no" autocomplete="off"> No
+        </label>
+    </div>
+    <br />
+    <br />
+    <button class="btn btn-default btn-primary form-control input-lg" disabled="disabled">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        Toggle Night Mode
+    </button>
+    <br />
+    <br />
+    <button class="btn btn-default btn-danger form-control input-lg" cmd="logout">
+        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+        Logout
+    </button>
+    <script>
+        $('#ipAddress').val(ipAddress);
+        $("#ipAddress").closest(".input-group").find("button.btn.btn-success").click(function () {
+            ipAddress = $('#ipAddress').val();
+            localStorage.ip_address = ipAddress;
+            $('#output').html('IP Address Saved').fadeIn();
+            return false;
+        });
+        
+        $('#looksPage').val(looksPage);
+        $("#looksPage").closest(".input-group").find("button.btn.btn-success").click(function () {
+            looksPage = $('#looksPage').val();
+            localStorage.looks_page = looksPage;
+            $('#output').html('Looks Page Saved').fadeIn();
+            return false;
+        });
+        
+        $('#cueStack').val(cueStack);
+        $("#cueStack").closest(".input-group").find("button.btn.btn-success").click(function () {
+            cueStack = $('#cueStack').val();
+            localStorage.cue_stack = cueStack;
+            $('#output').html('Cue List Saved').fadeIn();
+            return false;
+        });
+        
+        $("#entryMode option[value='" + entryMode + "']").attr("selected", 'selected');
+        $("#entryMode").closest(".input-group").find("button.btn.btn-success").click(function () {
+            entryMode = $('#entryMode').val();
+            localStorage.entry_mode = entryMode;
+            $('#output').html('Entry Mode Saved').fadeIn();
+            return false;
+        });
+        
+        $('#onLevel').val(onLevel);
+        $("#onLevel").closest(".input-group").find("button.btn.btn-success").click(function () {
+            onLevel = $('#onLevel').val();
+            localStorage.on_level = onLevel;
+            $('#output').html('On Level Saved').fadeIn();
+            return false;
+        });
+        
+        $('#pptMachineId').val(pptMachineId);
+        $("#pptMachineId").closest(".input-group").find("button.btn.btn-success").click(function () {
+            pptMachineId = $('#pptMachineId').val();
+            localStorage.ppt_machine_id = pptMachineId;
+            $('#output').html('PPT ID Saved').fadeIn();
+            return false;
+        });
+        
+        $('input[name=saveRestart][value="' + saveRestart + '"]').parent().button("toggle");
+        //$('input[name=saveRestart][value="' + saveRestart + '"]').parent().addClass("active");
+        $('input[name=saveRestart]').parent().on("click", function() 
+        {
+            $(this).button("toggle");
+            $(function() {
+                saveRestart = $('input[name=saveRestart]:checked').val();
+                localStorage.save_restart = saveRestart;
+                $('#output').html('Restart State Saved as \"' + saveRestart.charAt(0).toUpperCase() +  saveRestart.slice(1) + "\"").fadeIn();
+            });
+            return false;
+        });
+    </script>
+</div>

@@ -1,0 +1,13 @@
+{
+  "name": "Palette RFU",
+  "short_name": "Palette RFU",
+  "start_url": ".",
+  "display": "minimal-ui",
+  "background_color": "#FFD700",
+  "description": "A simple Remote Focus Unit for The Strand Palette Vl Series.",
+  "icons": [{
+    "src": "icons/icon.png",
+    "sizes": "180x180",
+    "type": "image/png"
+  }],
+}

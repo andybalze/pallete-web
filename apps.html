@@ -1,0 +1,38 @@
+<div id="appsPage" ttl="Applications" class="text-center">
+    <h3>Toggle Lights</h3>
+    <button class="btn btn-default btn-lg" id="toggWorks" cmd="toggleWorks">
+        <span class="glyphicon glyphicon-lamp" aria-hidden="true"></span>
+        Work Lights
+    </button>
+    <button class="btn btn-default btn-lg" id="toggTopHouse" cmd="toggleTopHouse">
+        <span class="glyphicon glyphicon-lamp" aria-hidden="true"></span>
+        Top House Lights
+    </button>
+
+    <button class="btn btn-default btn-lg" id="toggBotHouse" cmd="toggleBotHouse">
+        <span class="glyphicon glyphicon-lamp" aria-hidden="true"></span>
+        Bottom House Lights
+    </button>
+    <button class="btn btn-default btn-lg" cmd="blackout" disabled="disabled">
+        <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>
+        Black Out
+    </button>
+    <br />
+    <br />
+    <button class="btn btn-default btn-lg btn-block" cmd="saveShow">
+        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+        Save Show
+    </button>
+    <br />
+    <br />
+    <label for="message">Popup Message:</label>
+    <div class="input-group">
+        <input type="text" class="form-control" id="popMsg">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button" tabindex="-1" cmd="sendMessage">
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                Send
+            </button>
+        </span>
+    </div>
+</div>

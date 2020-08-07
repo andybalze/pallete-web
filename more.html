@@ -1,0 +1,17 @@
+<div id="morePage" ttl="More">
+    <nav>
+          <ul class="nav">
+            <li><a href="help">Help</a></li>
+            <li><a href="ppt">PowerPoint</a></li>
+            <li><a href="system">System</a></li>
+            <li><a href="setup">Setup</a></li>
+          </ul>
+    </nav>
+    <script>
+        $("nav ul.nav li a").click(function () {
+            navLink = $(this).attr("href");
+            loadPage(navLink);
+            return false;
+        });
+    </script>
+</div>

@@ -1,0 +1,226 @@
+<div id="rfuPage" ttl="Remote Focus Unit">
+    <script type="text/javascript" src="files/js/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        $( function() {
+            $( "#valuesFader" ).slider({
+                value: 0
+                , orientation: "vertical"
+                , min: 0
+                , max: 255
+                , step: 2.5
+                , slide: function (event, ui) {
+                    var valuePercent = Math.round(ui.value / 2.55)
+                        $('#debug').html('Fader has a value of: \"' + valuePercent + '%\"');
+                }
+            });
+        });
+    </script>
+    <script>
+        function addClickEvents() {
+        $("[btn=look]").click(function () {
+            "use strict";
+            btnLook();
+            return false;
+        });
+        $("[btn=number]").click(function () {
+            "use strict";
+            var num = $(this).attr("ref");
+            btnEnterNumber(num);
+            return false;
+        });
+        $("[btn=enter]").click(function () {
+            "use strict";
+            btnEnter();
+            return false;
+        });
+        $("[btn=on]").click(function () {
+            "use strict";
+            btnOn();
+            return false;
+        });
+        $("[btn=off]").click(function () {
+            "use strict";
+            btnOff();
+            return false;
+        });
+        $("[btn=thru]").click(function () {
+            "use strict";
+            btnThru();
+            return false;
+        });
+        $("[btn=minus]").click(function () {
+            "use strict";
+            btnMinus();
+            return false;
+        });
+        $("[btn=plus]").click(function () {
+            "use strict";
+            btnPlus();
+            return false;
+        });
+        $("[btn=rel]").click(function () {
+            "use strict";
+            btnRel();
+            return false;
+        });
+        $("[btn=at]").click(function () {
+            "use strict";
+            btnAt();
+            return false;
+        });
+        $("[btn=clr]").click(function () {
+            "use strict";
+            btnClr();
+            return false;
+        });
+        $("[btn=rem]").click(function () {
+            "use strict";
+            btnRem();
+            return false;
+        });
+        $("[btn=next]").click(function () {
+            "use strict";
+            btnNext();
+            return false;
+        });
+        $("[btn=prev]").click(function () {
+            "use strict";
+            btnPrev();
+            return false;
+        });
+        $("[btn=decimal]").click(function () {
+            "use strict";
+            btnDecimal();
+            return false;
+        });
+        $("[btn=rec]").click(function () {
+            "use strict";
+            btnRec();
+            return false;
+        });
+        $("[btn=park]").click(function () {
+            "use strict";
+            btnPark();
+            return false;
+        });
+        $("[btn=unpark]").click(function () {
+            "use strict";
+            btnUnPark();
+            return false;
+        });
+        $("[btn=cue]").click(function () {
+            "use strict";
+            btnCue();
+            return false;
+        });
+        };
+        addClickEvents();
+    </script>
+    <div class="col-xs-12 col-md-12 col-sm-12 shortkeys">
+        <button class="btn btn-default" onclick="$(valuesFader).toggleClass('hidden');" disabled="disabled">Toggle Fader</button>
+    </div>
+    <div class="col-xs-8 rfuSection">
+        <button class="col-xs-6 btn btn-default btn-lg btn-key btn-info" btn="look">Look</button>
+        <button class="col-xs-6 btn btn-default btn-lg btn-key btn-info" btn="rem">Rem</button>
+        <button class="col-xs-12 btn btn-default btn-lg btn-key btn-danger" btn="rel">Release</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="7">7</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="8">8</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="9">9</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="4">4</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="5">5</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="6">6</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="1">1</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="2">2</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="3">3</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="at">@</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="number" ref="0">0</button>
+        <button class="col-xs-4 btn btn-default btn-lg btn-key btn-primary" btn="decimal">.</button>
+        <button class="col-xs-6 btn btn-default btn-lg btn-key btn-success" btn="on">ON</button>
+        <button class="col-xs-6 btn btn-default btn-lg btn-key btn-danger" btn="off">OFF</button>
+    </div>
+    <div class="col-xs-4 rfuSection">
+        <button class="col-xs-12 btn btn-default btn-lg btn-key btn-danger" btn="clr">CLR</button>
+        <button class="col-xs-6 btn btn-default btn-lg btn-key btn-success" btn="prev">Prev</button>
+        <button class="col-xs-6 btn btn-default btn-lg btn-key btn-success" btn="next">Next</button>
+        <button class="col-xs-12 btn btn-default btn-lg btn-key btn-warning" btn="thru">Thru</button>
+        <button class="col-xs-6 btn btn-default btn-lg btn-key btn-success" btn="minus">-</button>
+        <button class="col-xs-6 btn btn-default btn-lg btn-key btn-success" btn="plus">+</button>
+        <button class="col-xs-12 btn btn-default btn-lg btn-key btn-danger" btn="park">Park</button>
+        <button class="col-xs-12 btn btn-default btn-lg btn-key btn-danger" btn="unpark">Un-Park</button>
+        <button class="col-xs-12 btn btn-default btn-lg btn-key btn-info" btn="enter">Enter</button>
+    </div>
+    <div style="line-height: 0;">&nbsp;</div><!-- This makes the border around the page look nice -->
+    <div class="hidden" id="valuesFader" style="height:250px;"></div>
+</div>
+<script>
+    /* ONLY ENABLE AFTER FIGURING OUT HOW TO do this correctly
+    // adds keyboard shortcuts
+    $(document).keyup(function (e) {
+        switch ((e || window.event).keyCode || (e || window.event).which) {
+        case 8: // Backspace
+            btnClr();
+            break;
+        case 27: //esc
+            btnRel();
+            break;
+        case 46: // Del
+            btnClr();
+            break;
+        }
+    });
+    $(document).keypress(function (e) {
+        switch ((e || window.event).keyCode || (e || window.event).which) {
+        case 8: // Backspace
+            btnClr();
+            break;
+        case 43: // +
+            btnPlus();
+            break;
+        case 45: // -
+            btnMinus();
+            break;
+        case 48: // 0
+            btnEnterNumber(0);
+            break;
+        case 49: //1
+            btnEnterNumber(1);
+            break;
+        case 50: //2
+            btnEnterNumber(2);
+            break;
+        case 51: // 3
+            btnEnterNumber(3);
+            break;
+        case 52: // 4
+            btnEnterNumber(4);
+            break;
+        case 53: // 5
+            btnEnterNumber(5);
+            break;
+        case 54: // 6
+            btnEnterNumber(6);
+            break;
+        case 55: // 7
+            btnEnterNumber(7);
+            break;
+        case 56: // 8
+            btnEnterNumber(8);
+            break;
+        case 57: // 9
+            btnEnterNumber(9);
+            break;
+        case 13: // Enter
+            btnEnter();
+            break;
+        case 64: // @
+            btnAt();
+            break;
+        case 46: // dot
+            btnDecimal();
+            break;
+        case 47: // /
+            btnThru();
+            break;
+        }
+    });*/
+</script>
